@@ -1187,9 +1187,9 @@ OSStatus extractIdentityAndTrust(CFDataRef inPKCS12Data,        // 5
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-  
-  NSUInteger size = [self.response expectedContentLength] < 0 ? 0 : (NSUInteger)[self.response expectedContentLength];
+	
   self.response = (NSHTTPURLResponse*) response;
+  NSUInteger size = [self.response expectedContentLength] < 0 ? 0 : (NSUInteger)[self.response expectedContentLength];
   
   // dont' save data if the operation was created to download directly to a stream.
   if([self.downloadStreams count] == 0)
